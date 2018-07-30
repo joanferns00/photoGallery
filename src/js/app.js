@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 
+import Carousel from './Carousel'
+
 const imageArray = [
 {  url     : 'http://via.placeholder.com/400x250/FF0000/000000',
    caption : 'Caption 1'},
@@ -19,7 +21,7 @@ const imageArray = [
 export default class MyGallery extends Component{
   render(){
     return (
-      <div>Hi there</div>
+        <Carousel title={"My gallery"} children={imageArray}/>
       )
   }
 }
