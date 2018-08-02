@@ -20,13 +20,14 @@ constructor(props){
 }
 
 handleSwipe(isNext){
- throttle((isNext) => {
-  if (isNext) {
-    this.nextSlide()
-  } else {
-    this.prevSlide()
-  }
-}, 5000, { trailing: false })() 
+  alert('Swipe');
+//  throttle((isNext) => {
+//   if (isNext) {
+//     this.nextSlide()
+//   } else {
+//     this.prevSlide()
+//   }
+// }, 5000, { trailing: false })() 
 }
 
 
