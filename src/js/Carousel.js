@@ -27,6 +27,34 @@ getOrder(itemIndex) {
   return itemIndex - position
 }
 
+nextSlide(){
+  const { position } = this.state
+  const { children } = this.props
+  const numItems = children.length || 1
+  this.doSliding('next', position === numItems - 1 ? 0 : position + 1)
+}
+
+prevSlide(){
+  const { position } = this.state
+  const { children } = this.props
+  const numItems = children.length
+  this.doSliding('prev', position === 0 ? numItems - 1 : position - 1)
+}
+
+doSliding(direction, position){
+  this.setState({
+    sliding: true,
+    direction,
+    position,
+    firstTime: false
+  })
+  setTimeout(() => {
+    this.setState({
+      sliding: false
+    })
+  }, 50)
+}
+
   render() {
 const { title, children } = this.props
     const { sliding, direction, position, firstTime} = this.state  
@@ -48,6 +76,8 @@ const { title, children } = this.props
               )) }
             </CarouselContainer>      
         </Wrapper>      
+<button className="prev" onClick={() => this.prevSlide()}>&#10094;</button>   
+<button className="next" onClick={ () => this.nextSlide() }>&#10095;</button>              
         </div>
     )
   }
