@@ -1,8 +1,11 @@
 import React, { PropTypes, Component } from 'react';
+import Swipeable from 'react-swipeable'
+import { throttle } from 'lodash'
 import CarouselContainer from './CarouselContainer'
 import Wrapper from './Wrapper'
 import CarouselSlot from './CarouselSlot'
 import Item from './Item'
+
 
 class Carousel extends Component {
 
@@ -14,6 +17,16 @@ constructor(props){
     sliding: false,
     firstTime: true
   }  
+}
+
+handleSwipe(isNext){
+ throttle((isNext) => {
+  if (isNext) {
+    this.nextSlide()
+  } else {
+    this.prevSlide()
+  }
+}, 5000, { trailing: false })() 
 }
 
 
@@ -62,6 +75,9 @@ const { title, children } = this.props
     return (
       <div>
         <h2 style={{textAlign: 'center'}}>{ title }</h2>
+          <Swipeable
+            onSwipingLeft={ () => this.handleSwipe(true) }
+            onSwipingRight={ () => this.handleSwipe() }>            
           <Wrapper>
            <button className="prev" onClick={() => this.prevSlide()}>&#10094;</button>              
             <CarouselContainer
@@ -77,7 +93,8 @@ const { title, children } = this.props
               )) }
             </CarouselContainer>
           <button className="next" onClick={ () => this.nextSlide() }>&#10095;</button>              
-          </Wrapper>       
+          </Wrapper>    
+          </Swipeable>   
         </div>
     )
   }
