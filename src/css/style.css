@@ -23,9 +23,9 @@ button:hover{
 
 @media only screen and (max-width: 600px) {
     button {
-        top: 30%;
+        top: 20%;
         padding: 16px;
         height: 150px;
-        border: 1px solid red;
+        opacity: 1;  
     }
 }
