@@ -7,10 +7,10 @@ export default class Item extends Component {
 	}
 
 	render(){
-  		const { url, caption } = this.props		
+  		const { url, caption, order } = this.props		
   		return(<div>
-                <img src={url} alt={caption}/>
-                <div style={{position: 'relative', bottom: '50px'}}>{caption}</div>
+                <img style={{width: '100%'}} src={url} alt={caption}/>
+                <div style={{position: 'relative', backgroundColor: 'rgba(255, 255, 255, 0.5)', lineHeight: '25px', bottom: order === 1 ? '25px' : '0px', transition: 'bottom 1000ms ease-in'}}>{caption}</div>
   			</div>)
 	}
 }

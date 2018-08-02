@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-
 import Carousel from './Carousel'
+import '../css/style.css'
 
 const imageArray = [
 {  url     : 'https://www.w3schools.com/css/img_5terre.jpg',
