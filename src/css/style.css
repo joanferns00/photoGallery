@@ -22,7 +22,7 @@ button:hover{
 }
 
 .caption{
-padding: 30px 0px;
+	padding:5px 0px;
 position: relative;
 background-color: rgba(255, 255, 255, 0.5);
 line-height: 25px;
@@ -38,7 +38,6 @@ transition: bottom 1000ms ease-in;
         border: 1px solid #333;
     }
     .caption{
-    	padding: 10px 0px;
-    	font-size: 16px;
+    	font-size: 20px;
     }
 }
