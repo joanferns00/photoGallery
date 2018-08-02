@@ -26,7 +26,7 @@ button:hover{
         top: 20%;
         padding: 16px;
         height: 150px;
-        opacity: 1;  
-        border: 1px solid transparent;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #333;
     }
 }
