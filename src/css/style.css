@@ -26,5 +26,6 @@ button:hover{
         top: 30%;
         padding: 16px;
         height: 150px;
+        border: 1px solid red;
     }
 }

@@ -82,7 +82,6 @@ const { title, children } = this.props
           onSwipedLeft={()=>this.handleSwipe(true)}
           onSwipedRight={()=>this.handleSwipe()}>            
           <Wrapper>
-                     
             <CarouselContainer
                 sliding={ sliding }
                 direction={ direction }
