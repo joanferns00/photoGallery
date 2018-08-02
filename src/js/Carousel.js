@@ -76,8 +76,11 @@ const { title, children } = this.props
       <div>
         <h2 style={{textAlign: 'center'}}>{ title }</h2>
           <Swipeable
-            onSwipingLeft={ () => this.handleSwipe(true) }
-            onSwipingRight={ () => this.handleSwipe() }>            
+          trackMouse
+          style={{ touchAction: 'none' }}
+          preventDefaultTouchmoveEvent
+          onSwipedLeft={()=>this.handleSwipe(true)}
+          onSwipedRight={()=>this.handleSwipe()}>            
           <Wrapper>
                      
             <CarouselContainer
