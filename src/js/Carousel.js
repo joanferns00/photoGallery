@@ -20,13 +20,12 @@ constructor(props){
 }
 
 handleSwipe(isNext){
-  alert('Swipe');
 //  throttle((isNext) => {
-//   if (isNext) {
-//     this.nextSlide()
-//   } else {
-//     this.prevSlide()
-//   }
+  if (isNext) {
+    this.nextSlide()
+  } else {
+    this.prevSlide()
+  }
 // }, 5000, { trailing: false })() 
 }
 
@@ -80,7 +79,7 @@ const { title, children } = this.props
             onSwipingLeft={ () => this.handleSwipe(true) }
             onSwipingRight={ () => this.handleSwipe() }>            
           <Wrapper>
-           <button className="prev" onClick={() => this.prevSlide()}>&#10094;</button>              
+                     
             <CarouselContainer
                 sliding={ sliding }
                 direction={ direction }
@@ -93,6 +92,7 @@ const { title, children } = this.props
                 </CarouselSlot>
               )) }
             </CarouselContainer>
+          <button className="prev" onClick={() => this.prevSlide()}>&#10094;</button>                
           <button className="next" onClick={ () => this.nextSlide() }>&#10095;</button>              
           </Wrapper>    
           </Swipeable>   
