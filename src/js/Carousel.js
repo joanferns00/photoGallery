@@ -62,7 +62,8 @@ const { title, children } = this.props
     return (
       <div>
         <h2 style={{textAlign: 'center'}}>{ title }</h2>
-        <Wrapper>
+          <Wrapper>
+           <button className="prev" onClick={() => this.prevSlide()}>&#10094;</button>              
             <CarouselContainer
                 sliding={ sliding }
                 direction={ direction }
@@ -74,10 +75,9 @@ const { title, children } = this.props
                   <Item url={child.url} caption={child.caption} order={ this.getOrder(index) }/>
                 </CarouselSlot>
               )) }
-            </CarouselContainer>      
-        </Wrapper>      
-<button className="prev" onClick={() => this.prevSlide()}>&#10094;</button>   
-<button className="next" onClick={ () => this.nextSlide() }>&#10095;</button>              
+            </CarouselContainer>
+          <button className="next" onClick={ () => this.nextSlide() }>&#10095;</button>              
+          </Wrapper>       
         </div>
     )
   }
